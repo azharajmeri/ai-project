@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light border-bottom border-3" style="background-color: #4CB5F5!important;">
+        
+        <a class="navbar-brand" href="{% url 'home' %}">8 Puzzle Solver</a>
+      
+        
+      </nav>
+    <!--/.Navbar -->       
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col py-2 px-5 bg-light">
+                <h3 class="navbar-brand">AI Project (AI IN GAMING)</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pb-2 px-5 bg-light">        
+
+    </div>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="view-screen">
+                <div class="eight-puzzle">
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn btn-lg btn-block col-5" onclick="solverFunction()" style="background-color: #0091D5!important;color: #fff!important;" type="button">
+                Solve
+            </button>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn btn-lg btn-block col-5" onclick="randomize()" style="background-color: #f09105!important;color: #fff!important;" type="button">
+                Randomize
+            </button>
+        </div>
+    </div>
+    {% csrf_token %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'ep.js' %}"></script>
+</body>
+</html>
