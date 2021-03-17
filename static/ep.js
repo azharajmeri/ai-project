@@ -93,6 +93,7 @@ var tiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
                 array1 =[]
             }
         }
+        $(".btn").prop('disabled', false);
     }
     function solverFunction(){
         $("#blurEditForm").show()
@@ -107,6 +108,7 @@ var tiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
             success: function(response){
                 $("#blurEditForm").hide()
                 $("#Loader-spin").hide()
+                $(".btn").prop('disabled', true);
                 solution = response.solution;
                 makeMoves(solution);
             },
