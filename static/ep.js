@@ -1,3 +1,6 @@
+$("#blurEditForm").hide()
+$("#Loader-spin").hide()
+
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -92,7 +95,8 @@ var tiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         }
     }
     function solverFunction(){
-        
+        $("#blurEditForm").show()
+        $("#Loader-spin").show()
         $.ajax({
             headers: { "X-CSRFToken": csrftoken },
             url: '/solve/'+tiles.join(""),
@@ -101,11 +105,14 @@ var tiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
             },
             type: 'post',
             success: function(response){
+                $("#blurEditForm").hide()
+                $("#Loader-spin").hide()
                 solution = response.solution;
                 makeMoves(solution);
             },
             error: function(data){
-                
+                $("#blurEditForm").hide()
+                $("#Loader-spin").hide()
             }
         })        
     };
