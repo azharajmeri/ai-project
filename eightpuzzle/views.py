@@ -32,7 +32,7 @@ def solverView(request, data):
                     return currentState
 
                 nodes, movement = findAllMoves(currentState)
-                print(nodes )
+                
                 for i in range(0, len(nodes)):
                     statestring = ' '.join([str(i) for i in nodes[i]])
                     if statestring not in explored:
@@ -135,8 +135,6 @@ def solverView(request, data):
                     temp += str(j)
                 
             Sequence = Sequence + temp
-
-            print(Sequence)
 
         return JsonResponse({'solution': Sequence}, status=200)
     return render(request, 'index.html')

@@ -50,11 +50,12 @@ var tiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
     var shiftTile = function (event) {
         var index = event.data.index;
-
         var targetIndex = -1;
-        if (index - 1 >= 0 && tiles[index - 1] == 0) { // check left
+        console.log(tiles.findIndex(tile => tile === 0), index)
+        if (index - 1 >= 0 && tiles[index - 1] == 0 && index % 3 != 0) { // check left
             targetIndex = index - 1;
-        } else if (index + 1 < tiles.length && tiles[index + 1] == 0) { // check right
+        } else if (index + 1 < tiles.length && tiles[index + 1] == 0 && (index+1) % 3 != 0) { // check right
+            console.log("That")
             targetIndex = index + 1;
         } else if (index - 3 >= 0 && tiles[index - 3] == 0) { //check up
             targetIndex = index - 3;
@@ -111,7 +112,7 @@ var tiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
     function randomize(){
         var newState = []
-        for(var i = 0; i < 10; i++){
+        for(var i = 0; i < 60; i++){
             var x = Math.floor((Math.random() * 8) + 1);
             console.log(x)
             document.getElementById(x).click();
