@@ -45,7 +45,7 @@ http://127.0.0.1:8000/
 ```
 
 ## 📸 ScreenShots
-![sample output of 8 puzzle.](/screenshot/output.png)
+![sample output of 8 puzzle.](/screenshots/output.png)
 
 ### Execution
-![sample execution of 8 puzzle.](/screenshot/running.gif)
+![sample execution of 8 puzzle.](/screenshots/running.gif)
